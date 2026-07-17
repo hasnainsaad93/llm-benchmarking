@@ -1,9 +1,9 @@
-# LLM Sentiment Benchmark (Phase 1)
+# LLM Sentiment Benchmark (Phases 1–2)
 
 Runnable skeleton of a web app that benchmarks LLMs (OpenAI and Anthropic)
 using social media-style sentiment.
 
-This phase focuses on:
+Phase 1 focuses on:
 
 - Project infrastructure (Next.js App Router, TypeScript, Prisma, PostgreSQL)
 - Core data model for posts and sentiment
@@ -64,3 +64,16 @@ and duplicate-prevention logic.
   It is intentionally simple and will be replaced by a better model in later
   phases.
 - Only the core skeleton requested for Phase 1 is implemented here.
+
+## Phase 2: User feedback collection form
+
+Phase 2 adds a minimal feedback collection flow:
+
+- New `Feedback` model in `prisma/schema.prisma` to store name, email, and
+  preferred `LLMModel`.
+- `/api/feedback` POST route to accept feedback submissions.
+- A form on the main benchmark page that lets users submit their name, email,
+  and preferred model (Anthropic or OpenAI).
+
+Email verification and duplicate feedback prevention are **not** implemented
+in this phase yet; they will be added in later phases of the roadmap.

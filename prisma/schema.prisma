@@ -26,3 +26,11 @@ model Post {
   sentiment  SentimentLabel
   createdAt  DateTime       @default(now())
 }
+
+model Feedback {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  model     LLMModel
+  createdAt DateTime @default(now())
+}
